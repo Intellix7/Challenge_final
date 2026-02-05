@@ -4,16 +4,13 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.10"
 dependencies = [
-    "datasets>=4.5.0",
-    "inference-sdk>=0.12.0",
     "ipykernel>=7.1.0",
-    "keras>=3.12.1",
+    "label-studio>=1.22.0",
     "opencv-python>=4.13.0.90",
     "pandas>=2.3.3",
-    "roboflow>=1.2.13",
     "scikit-learn>=1.7.2",
+    "scipy>=1.15.3",
     "seaborn>=0.13.2",
     "streamlit>=1.53.1",
-    "tensorflow>=2.20.0",
     "ultralytics>=8.4.11",
 ]

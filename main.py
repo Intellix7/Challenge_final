@@ -1,22 +1,15 @@
 import numpy as np
-from inference_sdk import InferenceHTTPClient
 import cv2
 from PIL import Image
 from ultralytics import YOLO
 
-model = YOLO("models/yolo26n.pt")
+model = YOLO("models/yolov8n.pt")
 
 # This takes AGES without a GPU cluster
-# model.train(data="datasets/yolo26-trash-detections/data.yaml", epochs=10, imgsz=640)
+# model.train(data="datasets/yolo26-trash-detections/data.yaml", epochs=1, imgsz=1280)
+model.train(data="datasets/coco8.yaml", epochs=10)
 
-CLIENT = InferenceHTTPClient(
-    api_url="https://serverless.roboflow.com",
-    api_key="LnLWBQvqfEuw3RoUhk9O"
-)
-
-result = CLIENT.infer("images/box.jpg", model_id="yolov8-trash-detections/6")
-print(result)
-
+model.val()
 
 # from datasets import load_dataset_builder
 # recycling_builder = load_dataset_builder('viola77data/recycling-dataset')
